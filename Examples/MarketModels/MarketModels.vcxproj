@@ -153,8 +153,8 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MarketModels-x64-mt</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Bartek\home\soft\boost_1_72_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Bartek\home\soft\boost_1_72_0\lib64-msvc-14.2;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Bartek\home\soft\boost_1_73_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Bartek\home\soft\boost_1_73_0\lib64-msvc-14.2;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LibraryPath>C:\Users\Bartek\home\soft\boost_1_72_0\lib64-msvc-14.2;$(LibraryPath)</LibraryPath>
