@@ -60,6 +60,10 @@ namespace QuantLib {
                                 Time maturity,
                                 Time bondMaturity) const;
 
+        Real phi(Time t) const;
+
+        Real ExtendedCoxIngersollRoss::discountBondYt(Time t, Time s, Real yt) const;
+
       protected:
         void generateArguments();
         Real A(Time t, Time T) const;
@@ -153,6 +157,10 @@ namespace QuantLib {
 
     inline void ExtendedCoxIngersollRoss::generateArguments() {
         phi_ = FittingParameter(termStructure(), theta(), k(), sigma(), x0());
+    }
+
+    inline Real ExtendedCoxIngersollRoss::phi(Time t) const {
+        return phi_(t);
     }
 
 }

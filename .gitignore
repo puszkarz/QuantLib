@@ -117,3 +117,11 @@ nbproject
 .dir-locals.el
 Build.props
 Directory.Build.props
+test-suite/bin/.unit_test_profile.txt
+test-suite/bin/tests-2.out
+test-suite/bin/tests-3.out
+test-suite/bin/tests-4.out
+test-suite/bin/tests-5.out
+test-suite/bin/tests-6.out
+test-suite/bin/tests-7.out
+test-suite/bin/tests.out

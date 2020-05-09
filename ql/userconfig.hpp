@@ -33,18 +33,18 @@
 /* Define this if error messages should include current function
    information. */
 #ifndef QL_ERROR_FUNCTIONS
-//#   define QL_ERROR_FUNCTIONS
+#   define QL_ERROR_FUNCTIONS
 #endif
 
 /* Define this if error messages should include file and line information. */
 #ifndef QL_ERROR_LINES
-//#   define QL_ERROR_LINES
+#   define QL_ERROR_LINES
 #endif
 
 /* Define this if tracing messages should be allowed (whether they are
    actually emitted will depend on run-time settings.) */
 #ifndef QL_ENABLE_TRACING
-//#   define QL_ENABLE_TRACING
+#   define QL_ENABLE_TRACING
 #endif
 
 /* Define this if extra safety checks should be performed. This can degrade
@@ -72,13 +72,13 @@
    the JVM or .NET eco system or any environment with an
    async garbage collector */
 #ifndef QL_ENABLE_THREAD_SAFE_OBSERVER_PATTERN
-//#    define QL_ENABLE_THREAD_SAFE_OBSERVER_PATTERN
+#    define QL_ENABLE_THREAD_SAFE_OBSERVER_PATTERN
 #endif
 
 /* Define this to enable a date resolution down to microseconds and
    allow for accurate intraday pricing.*/
 #ifndef QL_HIGH_RESOLUTION_DATE
-//#    define QL_HIGH_RESOLUTION_DATE
+#    define QL_HIGH_RESOLUTION_DATE
 #endif
 
 /* Define this to use standard smart pointers instead of Boost ones.
@@ -86,20 +86,20 @@
    C++11.  Note that std::shared_ptr does not check access and can
    cause segmentation faults. */
 #ifndef QL_USE_STD_SHARED_PTR
-//#    define QL_USE_STD_SHARED_PTR
+#    define QL_USE_STD_SHARED_PTR
 #endif
 
 /* Define this to replace std::auto_ptr with std::unique_ptr.
    This requires you to set your compiler's standard to at least C++11. */
 #ifndef QL_USE_STD_UNIQUE_PTR
-//#    define QL_USE_STD_UNIQUE_PTR
+#    define QL_USE_STD_UNIQUE_PTR
 #endif
 
 /* Define this to use std::function and std::bind instead of
    boost::function and boost::bind.  This requires you to set your
    compiler's standard to at least C++11. */
 #ifndef QL_USE_STD_FUNCTION
-//#    define QL_USE_STD_FUNCTION
+#    define QL_USE_STD_FUNCTION
 #endif
 
 /* Define this to enable the parallel unit test runner */
@@ -111,7 +111,7 @@
    Note: There is no support for thread safety and multiple sessions.
 */
 #ifndef QL_ENABLE_SINGLETON_THREAD_SAFE_INIT
-//#   define QL_ENABLE_SINGLETON_THREAD_SAFE_INIT
+#   define QL_ENABLE_SINGLETON_THREAD_SAFE_INIT
 #endif
 
 #endif

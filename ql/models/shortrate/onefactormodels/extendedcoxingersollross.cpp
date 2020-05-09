@@ -58,6 +58,18 @@ namespace QuantLib {
         return value;
     }
 
+    Real ExtendedCoxIngersollRoss::discountBondYt(Time t, Time s, Real yt) const {
+        Real pt = termStructure()->discount(t);
+        Real ps = termStructure()->discount(s);
+        Real dbt = CoxIngersollRoss::A(0.0,t)*std::exp(-B(0.0,t)*x0());
+        Real dbs = CoxIngersollRoss::A(0.0,s)*std::exp(-B(0.0,s)*x0());
+        Real phits = (ps * dbt) / (pt * dbs);
+
+        Real value = phits * CoxIngersollRoss::A(t, s) * std::exp(-B(t, s) * yt);
+
+        return value;
+    }
+
     Real ExtendedCoxIngersollRoss::discountBondOption(Option::Type type,
                                                       Real strike,
                                                       Time t, Time s) const {
