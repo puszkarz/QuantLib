@@ -2241,6 +2241,9 @@
     <ClInclude Include="ql\processes\blackscholesprocess.hpp">
       <Filter>processes</Filter>
     </ClInclude>
+    <ClInclude Include="ql\processes\coxingersollrossprocess.hpp">
+      <Filter>processes</Filter>
+    </ClInclude>
     <ClInclude Include="ql\processes\endeulerdiscretization.hpp">
       <Filter>processes</Filter>
     </ClInclude>
@@ -2568,6 +2571,9 @@
     <ClInclude Include="ql\pricingengines\lookback\analyticcontinuouspartialfloatinglookback.hpp">
       <Filter>pricingengines\lookback</Filter>
     </ClInclude>
+    <ClInclude Include="ql\pricingengines\lookback\mclookbackengine.hpp">
+      <Filter>pricingengines\lookback</Filter>
+    </ClInclude>
     <ClInclude Include="ql\pricingengines\bond\all.hpp">
       <Filter>pricingengines\bond</Filter>
     </ClInclude>
@@ -2817,6 +2823,9 @@
     <ClInclude Include="ql\time\daycounters\actual360.hpp">
       <Filter>time\daycounters</Filter>
     </ClInclude>
+    <ClInclude Include="ql\time\daycounters\actual364.hpp">
+      <Filter>time\daycounters</Filter>
+    </ClInclude>
     <ClInclude Include="ql\time\daycounters\actual365fixed.hpp">
       <Filter>time\daycounters</Filter>
     </ClInclude>
@@ -2836,6 +2845,9 @@
       <Filter>time\daycounters</Filter>
     </ClInclude>
     <ClInclude Include="ql\time\daycounters\thirty360.hpp">
+      <Filter>time\daycounters</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\time\daycounters\thirty365.hpp">
       <Filter>time\daycounters</Filter>
     </ClInclude>
     <ClInclude Include="ql\legacy\all.hpp">
@@ -3889,6 +3901,9 @@
     <ClInclude Include="ql\pricingengines\vanilla\fdhestonvanillaengine.hpp">
       <Filter>pricingengines\vanilla</Filter>
     </ClInclude>
+    <ClInclude Include="ql\pricingengines\vanilla\fdcirvanillaengine.hpp">
+      <Filter>pricingengines\vanilla</Filter>
+    </ClInclude>
     <ClInclude Include="ql\methods\finitedifferences\meshers\fdm1dmesher.hpp">
       <Filter>methods\finitedifferences\meshers</Filter>
     </ClInclude>
@@ -3946,6 +3961,9 @@
     <ClInclude Include="ql\methods\finitedifferences\operators\fdmhestonop.hpp">
       <Filter>methods\finitedifferences\operators</Filter>
     </ClInclude>
+    <ClInclude Include="ql\methods\finitedifferences\operators\fdmcirop.hpp">
+      <Filter>methods\finitedifferences\operators</Filter>
+    </ClInclude>
     <ClInclude Include="ql\methods\finitedifferences\solvers\fdmbatessolver.hpp">
       <Filter>methods\finitedifferences\solvers</Filter>
     </ClInclude>
@@ -3956,6 +3974,9 @@
       <Filter>methods\finitedifferences\solvers</Filter>
     </ClInclude>
     <ClInclude Include="ql\methods\finitedifferences\solvers\fdmhestonsolver.hpp">
+      <Filter>methods\finitedifferences\solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\methods\finitedifferences\solvers\fdmcirsolver.hpp">
       <Filter>methods\finitedifferences\solvers</Filter>
     </ClInclude>
     <ClInclude Include="ql\methods\finitedifferences\meshers\fdmblackscholesmesher.hpp">
@@ -4304,6 +4325,12 @@
       <Filter>math\integrals</Filter>
     </ClInclude>
     <ClInclude Include="ql\math\integrals\momentbasedgaussianpolynomial.hpp">
+      <Filter>math\integrals</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\pricingengines\vanilla\exponentialfittinghestonengine.hpp">
+      <Filter>pricingengines\vanilla</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\math\integrals\exponentialintegrals.hpp">
       <Filter>math\integrals</Filter>
     </ClInclude>
   </ItemGroup>
@@ -5439,6 +5466,9 @@
     <ClCompile Include="ql\processes\blackscholesprocess.cpp">
       <Filter>processes</Filter>
     </ClCompile>
+    <ClCompile Include="ql\processes\coxingersollrossprocess.cpp">
+      <Filter>processes</Filter>
+    </ClCompile>
     <ClCompile Include="ql\processes\endeulerdiscretization.cpp">
       <Filter>processes</Filter>
     </ClCompile>
@@ -5650,6 +5680,9 @@
       <Filter>pricingengines\lookback</Filter>
     </ClCompile>
     <ClCompile Include="ql\pricingengines\lookback\analyticcontinuouspartialfloatinglookback.cpp">
+      <Filter>pricingengines\lookback</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\pricingengines\lookback\mclookbackengine.cpp">
       <Filter>pricingengines\lookback</Filter>
     </ClCompile>
     <ClCompile Include="ql\pricingengines\bond\bondfunctions.cpp">
@@ -5872,6 +5905,9 @@
       <Filter>time\daycounters</Filter>
     </ClCompile>
     <ClCompile Include="ql\time\daycounters\thirty360.cpp">
+      <Filter>time\daycounters</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\time\daycounters\thirty365.cpp">
       <Filter>time\daycounters</Filter>
     </ClCompile>
     <ClCompile Include="ql\legacy\libormarketmodels\lfmcovarparam.cpp">
@@ -6612,6 +6648,9 @@
     <ClCompile Include="ql\pricingengines\vanilla\fdhestonvanillaengine.cpp">
       <Filter>pricingengines\vanilla</Filter>
     </ClCompile>
+    <ClCompile Include="ql\pricingengines\vanilla\fdcirvanillaengine.cpp">
+      <Filter>pricingengines\vanilla</Filter>
+    </ClCompile>
     <ClCompile Include="ql\methods\finitedifferences\operators\fdm2dblackscholesop.cpp">
       <Filter>methods\finitedifferences\operators</Filter>
     </ClCompile>
@@ -6657,6 +6696,9 @@
     <ClCompile Include="ql\methods\finitedifferences\operators\fdmhestonop.cpp">
       <Filter>methods\finitedifferences\operators</Filter>
     </ClCompile>
+    <ClCompile Include="ql\methods\finitedifferences\operators\fdmcirop.cpp">
+      <Filter>methods\finitedifferences\operators</Filter>
+    </ClCompile>
     <ClCompile Include="ql\methods\finitedifferences\solvers\fdmbatessolver.cpp">
       <Filter>methods\finitedifferences\solvers</Filter>
     </ClCompile>
@@ -6667,6 +6709,9 @@
       <Filter>methods\finitedifferences\solvers</Filter>
     </ClCompile>
     <ClCompile Include="ql\methods\finitedifferences\solvers\fdmhestonsolver.cpp">
+      <Filter>methods\finitedifferences\solvers</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\methods\finitedifferences\solvers\fdmcirsolver.cpp">
       <Filter>methods\finitedifferences\solvers</Filter>
     </ClCompile>
     <ClCompile Include="ql\methods\finitedifferences\meshers\fdmblackscholesmesher.cpp">
@@ -6947,6 +6992,12 @@
     </ClCompile>
     <ClCompile Include="ql\methods\finitedifferences\schemes\cranknicolsonscheme.cpp">
       <Filter>methods\finitedifferences\schemes</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\pricingengines\vanilla\exponentialfittinghestonengine.cpp">
+      <Filter>pricingengines\vanilla</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\math\integrals\exponentialintegrals.cpp">
+      <Filter>math\integrals</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

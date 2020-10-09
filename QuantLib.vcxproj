@@ -1016,6 +1016,7 @@
     <ClInclude Include="ql\math\initializers.hpp" />
     <ClInclude Include="ql\math\integrals\all.hpp" />
     <ClInclude Include="ql\math\integrals\discreteintegrals.hpp" />
+    <ClInclude Include="ql\math\integrals\exponentialintegrals.hpp" />
     <ClInclude Include="ql\math\integrals\filonintegral.hpp" />
     <ClInclude Include="ql\math\integrals\gaussianorthogonalpolynomial.hpp" />
     <ClInclude Include="ql\math\integrals\gaussianquadratures.hpp" />
@@ -1183,6 +1184,7 @@
     <ClInclude Include="ql\methods\finitedifferences\operators\fdmg2op.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\operators\fdmhestonhullwhiteop.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\operators\fdmhestonop.hpp" />
+    <ClInclude Include="ql\methods\finitedifferences\operators\fdmcirop.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\operators\fdmhullwhiteop.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\operators\fdmlinearop.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\operators\fdmlinearopcomposite.hpp" />
@@ -1226,6 +1228,7 @@
     <ClInclude Include="ql\methods\finitedifferences\solvers\fdmg2solver.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\solvers\fdmhestonhullwhitesolver.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\solvers\fdmhestonsolver.hpp" />
+    <ClInclude Include="ql\methods\finitedifferences\solvers\fdmcirsolver.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\solvers\fdmhullwhitesolver.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\solvers\fdmndimsolver.hpp" />
     <ClInclude Include="ql\methods\finitedifferences\solvers\fdmsimple2dbssolver.hpp" />
@@ -1516,6 +1519,7 @@
     <ClInclude Include="ql\pricingengines\lookback\analyticcontinuousfloatinglookback.hpp" />
     <ClInclude Include="ql\pricingengines\lookback\analyticcontinuouspartialfixedlookback.hpp" />
     <ClInclude Include="ql\pricingengines\lookback\analyticcontinuouspartialfloatinglookback.hpp" />
+    <ClInclude Include="ql\pricingengines\lookback\mclookbackengine.hpp" />
     <ClInclude Include="ql\pricingengines\mclongstaffschwartzengine.hpp" />
     <ClInclude Include="ql\pricingengines\mcsimulation.hpp" />
     <ClInclude Include="ql\pricingengines\quanto\all.hpp" />
@@ -1556,6 +1560,7 @@
     <ClInclude Include="ql\pricingengines\vanilla\bjerksundstenslandengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\coshestonengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\discretizedvanillaoption.hpp" />
+    <ClInclude Include="ql\pricingengines\vanilla\exponentialfittinghestonengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\fdamericanengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\fdbatesvanillaengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\fdbermudanengine.hpp" />
@@ -1575,6 +1580,7 @@
     <ClInclude Include="ql\pricingengines\vanilla\fdsimplebsswingengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\fdstepconditionengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\fdvanillaengine.hpp" />
+    <ClInclude Include="ql\pricingengines\vanilla\fdcirvanillaengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\hestonexpansionengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\integralengine.hpp" />
     <ClInclude Include="ql\pricingengines\vanilla\jumpdiffusionengine.hpp" />
@@ -1589,6 +1595,7 @@
     <ClInclude Include="ql\processes\all.hpp" />
     <ClInclude Include="ql\processes\batesprocess.hpp" />
     <ClInclude Include="ql\processes\blackscholesprocess.hpp" />
+    <ClInclude Include="ql\processes\coxingersollrossprocess.hpp" />
     <ClInclude Include="ql\processes\endeulerdiscretization.hpp" />
     <ClInclude Include="ql\processes\eulerdiscretization.hpp" />
     <ClInclude Include="ql\processes\forwardmeasureprocess.hpp" />
@@ -1786,6 +1793,7 @@
     <ClInclude Include="ql\time\dategenerationrule.hpp" />
     <ClInclude Include="ql\time\daycounter.hpp" />
     <ClInclude Include="ql\time\daycounters\actual360.hpp" />
+    <ClInclude Include="ql\time\daycounters\actual364.hpp" />
     <ClInclude Include="ql\time\daycounters\actual365fixed.hpp" />
     <ClInclude Include="ql\time\daycounters\actualactual.hpp" />
     <ClInclude Include="ql\time\daycounters\all.hpp" />
@@ -1793,6 +1801,7 @@
     <ClInclude Include="ql\time\daycounters\one.hpp" />
     <ClInclude Include="ql\time\daycounters\simpledaycounter.hpp" />
     <ClInclude Include="ql\time\daycounters\thirty360.hpp" />
+    <ClInclude Include="ql\time\daycounters\thirty365.hpp" />
     <ClInclude Include="ql\time\ecb.hpp" />
     <ClInclude Include="ql\time\frequency.hpp" />
     <ClInclude Include="ql\time\imm.hpp" />
@@ -2219,6 +2228,7 @@
     <ClCompile Include="ql\math\factorial.cpp" />
     <ClCompile Include="ql\math\incompletegamma.cpp" />
     <ClCompile Include="ql\math\integrals\discreteintegrals.cpp" />
+    <ClCompile Include="ql\math\integrals\exponentialintegrals.cpp" />
     <ClCompile Include="ql\math\integrals\filonintegral.cpp" />
     <ClCompile Include="ql\math\integrals\gaussianorthogonalpolynomial.cpp" />
     <ClCompile Include="ql\math\integrals\gaussianquadratures.cpp" />
@@ -2299,6 +2309,7 @@
     <ClCompile Include="ql\methods\finitedifferences\operators\fdmg2op.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\operators\fdmhestonhullwhiteop.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\operators\fdmhestonop.cpp" />
+    <ClCompile Include="ql\methods\finitedifferences\operators\fdmcirop.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\operators\fdmhullwhiteop.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\operators\fdmlinearoplayout.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\operators\fdmlocalvolfwdop.cpp" />
@@ -2329,6 +2340,7 @@
     <ClCompile Include="ql\methods\finitedifferences\solvers\fdmg2solver.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\solvers\fdmhestonhullwhitesolver.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\solvers\fdmhestonsolver.cpp" />
+    <ClCompile Include="ql\methods\finitedifferences\solvers\fdmcirsolver.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\solvers\fdmhullwhitesolver.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\solvers\fdmsimple2dbssolver.cpp" />
     <ClCompile Include="ql\methods\finitedifferences\stepconditions\fdmamericanstepcondition.cpp" />
@@ -2530,6 +2542,7 @@
     <ClCompile Include="ql\pricingengines\lookback\analyticcontinuousfloatinglookback.cpp" />
     <ClCompile Include="ql\pricingengines\lookback\analyticcontinuouspartialfixedlookback.cpp" />
     <ClCompile Include="ql\pricingengines\lookback\analyticcontinuouspartialfloatinglookback.cpp" />
+    <ClCompile Include="ql\pricingengines\lookback\mclookbackengine.cpp" />
     <ClCompile Include="ql\pricingengines\swap\cvaswapengine.cpp" />
     <ClCompile Include="ql\pricingengines\swap\discountingswapengine.cpp" />
     <ClCompile Include="ql\pricingengines\swap\discretizedswap.cpp" />
@@ -2561,6 +2574,7 @@
     <ClCompile Include="ql\pricingengines\vanilla\bjerksundstenslandengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\coshestonengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\discretizedvanillaoption.cpp" />
+    <ClCompile Include="ql\pricingengines\vanilla\exponentialfittinghestonengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\fdbatesvanillaengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\fdblackscholesvanillaengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\fdcevvanillaengine.cpp" />
@@ -2569,6 +2583,7 @@
     <ClCompile Include="ql\pricingengines\vanilla\fdsabrvanillaengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\fdsimplebsswingengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\fdvanillaengine.cpp" />
+    <ClCompile Include="ql\pricingengines\vanilla\fdcirvanillaengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\hestonexpansionengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\integralengine.cpp" />
     <ClCompile Include="ql\pricingengines\vanilla\jumpdiffusionengine.cpp" />
@@ -2578,6 +2593,7 @@
     <ClCompile Include="ql\pricingengines\vanilla\mchestonhullwhiteengine.cpp" />
     <ClCompile Include="ql\processes\batesprocess.cpp" />
     <ClCompile Include="ql\processes\blackscholesprocess.cpp" />
+    <ClCompile Include="ql\processes\coxingersollrossprocess.cpp" />
     <ClCompile Include="ql\processes\endeulerdiscretization.cpp" />
     <ClCompile Include="ql\processes\eulerdiscretization.cpp" />
     <ClCompile Include="ql\processes\forwardmeasureprocess.cpp" />
@@ -2722,6 +2738,7 @@
     <ClCompile Include="ql\time\daycounters\business252.cpp" />
     <ClCompile Include="ql\time\daycounters\simpledaycounter.cpp" />
     <ClCompile Include="ql\time\daycounters\thirty360.cpp" />
+    <ClCompile Include="ql\time\daycounters\thirty365.cpp" />
     <ClCompile Include="ql\time\ecb.cpp" />
     <ClCompile Include="ql\time\frequency.cpp" />
     <ClCompile Include="ql\time\imm.cpp" />

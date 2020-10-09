@@ -336,7 +336,7 @@ namespace {
 
         explicit ExpErrorPred(const string& msg) : expMsg(msg) {}
 
-        bool operator()(const Error& ex) {
+        bool operator()(const Error& ex) const {
             string errMsg(ex.what());
             if (errMsg.find(expMsg) == string::npos) {
                 BOOST_TEST_MESSAGE("Error expected to contain: '" << expMsg << "'.");
@@ -434,7 +434,7 @@ void DefaultProbabilityCurveTest::testUpfrontBootstrap() {
 */
 void DefaultProbabilityCurveTest::testIterativeBootstrapRetries() {
 
-    BOOST_TEST_MESSAGE("Testing iterative boostrap with retries...");
+    BOOST_TEST_MESSAGE("Testing iterative bootstrap with retries...");
 
     SavedSettings backup;
 
