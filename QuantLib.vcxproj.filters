@@ -3750,6 +3750,7 @@
     <ClInclude Include="ql\termstructure.hpp" />
     <ClInclude Include="ql\timegrid.hpp" />
     <ClInclude Include="ql\timeseries.hpp" />
+    <ClInclude Include="ql\tuple.hpp" />
     <ClInclude Include="ql\types.hpp" />
     <ClInclude Include="ql\userconfig.hpp" />
     <ClInclude Include="ql\version.hpp" />
@@ -4332,6 +4333,9 @@
     </ClInclude>
     <ClInclude Include="ql\math\integrals\exponentialintegrals.hpp">
       <Filter>math\integrals</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\termstructures\yield\ultimateforwardtermstructure.hpp">
+      <Filter>termstructures\yield</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
