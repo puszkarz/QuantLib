@@ -32,7 +32,6 @@
 
 #include <ql/types.hpp>
 #include <ql/errors.hpp>
-#include <ql/functional.hpp>
 
 #ifdef VERSION
 /* This comes from ./configure, and for some reason it interferes with
@@ -55,14 +54,12 @@
 #include <boost/test/included/unit_test.hpp>
 #endif
 #include <boost/algorithm/string.hpp>
-#include <boost/lexical_cast.hpp>
 
 #include <map>
 #include <list>
 #include <sstream>
 #include <utility>
 #include <fstream>
-
 #include <string>
 #include <cstring>
 #include <cstdlib>
@@ -222,7 +219,7 @@ int main( int argc, char* argv[] )
 
                     QL_REQUIRE(tok.size() == 2,
                         "every line should consists of two entries");
-                    runTimeLog[tok[0]] = boost::lexical_cast<Time>(tok[1]);
+                    runTimeLog[tok[0]] = std::stod(tok[1]);
                 }
             }
             in.close();
@@ -241,7 +238,7 @@ int main( int argc, char* argv[] )
                 std::vector<std::string> tok;
                 boost::split(tok, arg, boost::is_any_of("="));
                 if (tok.size() == 2 && tok[0] == "--nProc") {
-                    nProc = boost::lexical_cast<unsigned>(tok[1]);
+                    nProc = std::stoul(tok[1]);
                 }
                 else if (arg != "--build_info=yes") {
                     cmd << arg << " ";
@@ -287,7 +284,7 @@ int main( int argc, char* argv[] )
             // fork worker processes
             boost::thread_group threadGroup;
             for (unsigned i=0; i < nProc; ++i) {
-                threadGroup.create_thread(QuantLib::ext::bind(worker, cmd.str()));
+                threadGroup.create_thread([&]() { worker(cmd.str()); });
             }
 
             struct mutex_remove {
@@ -416,8 +413,7 @@ int main( int argc, char* argv[] )
                 #if BOOST_VERSION < 106200
                     BOOST_TEST_FOREACH( test_observer*, to,
                         framework::impl::s_frk_state().m_observers )
-                        framework::impl::s_frk_state().m_aux_em.vexecute(
-                            ext::bind( &test_observer::test_start, to, 1 ) );
+                        framework::impl::s_frk_state().m_aux_em.vexecute([&](){ to->test_start(1); });
 
                     framework::impl::s_frk_state().execute_test_tree( id.id );
 

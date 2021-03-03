@@ -29,8 +29,8 @@ namespace QuantLib {
                                            Real xtol,
                                            Real gtol,
                                            bool useCostFunctionsJacobian)
-        : info_(0), epsfcn_(epsfcn), xtol_(xtol), gtol_(gtol),
-          useCostFunctionsJacobian_(useCostFunctionsJacobian) {}
+    : epsfcn_(epsfcn), xtol_(xtol), gtol_(gtol),
+      useCostFunctionsJacobian_(useCostFunctionsJacobian) {}
 
     Integer LevenbergMarquardt::getInfo() const {
         return info_;
@@ -86,8 +86,7 @@ namespace QuantLib {
             ext::bind(&LevenbergMarquardt::fcn, this, _1, _2, _3, _4, _5);
         MINPACK::LmdifCostFunction lmdifJacFunction =
             useCostFunctionsJacobian_
-                ? ext::bind(&LevenbergMarquardt::jacFcn, this, _1, _2, _3,
-                              _4, _5)
+                ? ext::bind(&LevenbergMarquardt::jacFcn, this, _1, _2, _3, _4, _5)
                 : MINPACK::LmdifCostFunction();
         MINPACK::lmdif(m, n, xx.get(), fvec.get(),
                        endCriteria.functionEpsilon(),

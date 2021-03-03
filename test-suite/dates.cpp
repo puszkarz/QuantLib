@@ -217,12 +217,10 @@ void DateTest::asxDates() {
             << " is not the ASX code matching " << asx);
 
         // check that for every date the 120 ASX codes refer to future dates
-        for (int i = 0; i<120; ++i) {
-            if (ASX::date(ASXcodes[i], counter)<counter)
-                BOOST_FAIL("\n  "
-                << ASX::date(ASXcodes[i], counter)
-                << " is wrong for " << ASXcodes[i]
-                << " at reference date " << counter);
+        for (const auto& ASXcode : ASXcodes) {
+            if (ASX::date(ASXcode, counter) < counter)
+                BOOST_FAIL("\n  " << ASX::date(ASXcode, counter) << " is wrong for " << ASXcode
+                                  << " at reference date " << counter);
         }
 
         counter = counter + 1;
@@ -479,7 +477,7 @@ void DateTest::canHash() {
 }
 
 test_suite* DateTest::suite(SpeedLevel speed) {
-    test_suite* suite = BOOST_TEST_SUITE("Date tests");
+    auto* suite = BOOST_TEST_SUITE("Date tests");
 
     suite->add(QUANTLIB_TEST_CASE(&DateTest::testConsistency));
     suite->add(QUANTLIB_TEST_CASE(&DateTest::ecbDates));

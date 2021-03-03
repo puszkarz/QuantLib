@@ -32,6 +32,7 @@
 #include <boost/shared_array.hpp>
 
 namespace QuantLib {
+
     class FdmMesher;
 
     class NinePointLinearOp : public FdmLinearOp {
@@ -39,21 +40,27 @@ namespace QuantLib {
         NinePointLinearOp(Size d0, Size d1,
                 const ext::shared_ptr<FdmMesher>& mesher);
         NinePointLinearOp(const NinePointLinearOp& m);
+        NinePointLinearOp(NinePointLinearOp&& m) QL_NOEXCEPT;
+        #ifdef QL_USE_DISPOSABLE
         NinePointLinearOp(const Disposable<NinePointLinearOp>& m);
+        #endif
         NinePointLinearOp& operator=(const NinePointLinearOp& m);
+        NinePointLinearOp& operator=(NinePointLinearOp&& m) QL_NOEXCEPT;
+        #ifdef QL_USE_DISPOSABLE
         NinePointLinearOp& operator=(const Disposable<NinePointLinearOp>& m);
+        #endif
 
-        Disposable<Array> apply(const Array& r) const;
+        Disposable<Array> apply(const Array& r) const override;
         Disposable<NinePointLinearOp> mult(const Array& u) const;
 
         void swap(NinePointLinearOp& m);
 
 #if !defined(QL_NO_UBLAS_SUPPORT)
-        Disposable<SparseMatrix> toMatrix() const;
+        Disposable<SparseMatrix> toMatrix() const override;
 #endif
 
       protected:
-        NinePointLinearOp() {}
+        NinePointLinearOp() = default;
 
         Size d0_, d1_;
         boost::shared_array<Size> i00_, i10_, i20_;
@@ -65,6 +72,23 @@ namespace QuantLib {
 
         ext::shared_ptr<FdmMesher> mesher_;
     };
+
+
+    inline NinePointLinearOp::NinePointLinearOp(NinePointLinearOp&& m) QL_NOEXCEPT {
+        swap(m);
+    }
+
+    inline NinePointLinearOp& NinePointLinearOp::operator=(const NinePointLinearOp& m) {
+        NinePointLinearOp temp(m);
+        swap(temp);
+        return *this;
+    }
+
+    inline NinePointLinearOp& NinePointLinearOp::operator=(NinePointLinearOp&& m) QL_NOEXCEPT {
+        swap(m);
+        return *this;
+    }
+
 }
 
 #endif

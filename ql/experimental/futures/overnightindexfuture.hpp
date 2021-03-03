@@ -27,6 +27,7 @@
 
 #include <ql/indexes/iborindex.hpp>
 #include <ql/instruments/forward.hpp>
+#include <ql/cashflows/overnightindexedcoupon.hpp>
 
 namespace QuantLib {
 
@@ -36,23 +37,21 @@ namespace QuantLib {
     */
     class OvernightIndexFuture : public Forward {
       public:
-        enum NettingType { Averaging, Compounding };
-
         OvernightIndexFuture(const ext::shared_ptr<OvernightIndex>& overnightIndex,
                              const ext::shared_ptr<Payoff>& payoff,
                              const Date& valueDate,
                              const Date& maturityDate,
                              const Handle<YieldTermStructure>& discountCurve,
-                             const Handle<Quote>& convexityAdjustment = Handle<Quote>(),
-                             NettingType subPeriodsNettingType = Compounding);
+                             Handle<Quote> convexityAdjustment = Handle<Quote>(),
+                             OvernightAveraging::Type averagingMethod = OvernightAveraging::Compound);
 
         //! returns spot value/price of an underlying financial instrument
-        virtual Real spotValue() const;
+        Real spotValue() const override;
 
         //! NPV of income/dividends/storage-costs etc. of underlying instrument
-        virtual Real spotIncome(const Handle<YieldTermStructure>&) const;
+        Real spotIncome(const Handle<YieldTermStructure>&) const override;
 
-        virtual Real forwardValue() const;
+        Real forwardValue() const override;
 
         Real convexityAdjustment() const;
 
@@ -61,7 +60,7 @@ namespace QuantLib {
         Real compoundedSpotValue() const;
         ext::shared_ptr<OvernightIndex> overnightIndex_;
         Handle<Quote> convexityAdjustment_;
-        NettingType subPeriodsNettingType_;
+        OvernightAveraging::Type averagingMethod_;
     };
 
 }

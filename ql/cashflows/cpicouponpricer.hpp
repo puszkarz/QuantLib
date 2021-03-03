@@ -44,10 +44,10 @@ namespace QuantLib {
         QL_DEPRECATED
         CPICouponPricer();
 
-        explicit CPICouponPricer(const Handle<YieldTermStructure>& nominalTermStructure);
+        explicit CPICouponPricer(Handle<YieldTermStructure> nominalTermStructure);
 
-        CPICouponPricer(const Handle<CPIVolatilitySurface>& capletVol,
-                        const Handle<YieldTermStructure>& nominalTermStructure);
+        CPICouponPricer(Handle<CPIVolatilitySurface> capletVol,
+                        Handle<YieldTermStructure> nominalTermStructure);
 
         virtual Handle<CPIVolatilitySurface> capletVolatility() const{
             return capletVol_;
@@ -63,13 +63,13 @@ namespace QuantLib {
 
         //! \name InflationCouponPricer interface
         //@{
-        virtual Real swapletPrice() const;
-        virtual Rate swapletRate() const;
-        virtual Real capletPrice(Rate effectiveCap) const;
-        virtual Rate capletRate(Rate effectiveCap) const;
-        virtual Real floorletPrice(Rate effectiveFloor) const;
-        virtual Rate floorletRate(Rate effectiveFloor) const;
-        virtual void initialize(const InflationCoupon&);
+        Real swapletPrice() const override;
+        Rate swapletRate() const override;
+        Real capletPrice(Rate effectiveCap) const override;
+        Rate capletRate(Rate effectiveCap) const override;
+        Real floorletPrice(Rate effectiveFloor) const override;
+        Rate floorletRate(Rate effectiveFloor) const override;
+        void initialize(const InflationCoupon&) override;
         //@}
 
 
