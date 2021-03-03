@@ -63,7 +63,7 @@ namespace QuantLib {
 
         Real phi(Time t) const;
 
-        Real ExtendedCoxIngersollRoss::discountBondYt(Time t, Time s, Real yt) const;
+        Real discountBondYt(Time t, Time s, Real yt) const;
 
       protected:
         void generateArguments() override;

@@ -126,3 +126,4 @@ test-suite/bin/tests-5.out
 test-suite/bin/tests-6.out
 test-suite/bin/tests-7.out
 test-suite/bin/tests.out
+.DS_Store
